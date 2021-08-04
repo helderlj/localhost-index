@@ -66,7 +66,7 @@ function checkDirType($dirName) {
         <style>
             body {
                 background-image: url("https://user-images.githubusercontent.com/33905714/128099250-f32028cb-7d93-40db-8440-c059fd0def69.jpg");
-                background-size: cover;
+                background-size: contain;
                 margin: 0;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
