@@ -250,8 +250,8 @@ function checkDirType($dirName) {
                     <?php endif; ?>
                     <?php if (is_dir($scanned_directory)): ?>
                     <?php if (in_array($show_project, array('directory', 'both'))): ?>
-                    <a href="<?=strtolower($scanned_directory)?>">
-                        <?php $type = checkDirType($scanned_directory);?>
+                    <?php $type = checkDirType($scanned_directory);?>
+                    <a href="<?=($type == "lara") ? strtolower($scanned_directory)."/public/" : strtolower($scanned_directory)?>">
                         <?php $stat = stat($scanned_directory); ?>
                         <div class="card-<?= $type?> card-width notification">
                             <?php if(gmdate("d/m/Y", $stat['mtime']) <= date("d/m/Y")){?>
