@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("America/Sao_Paulo");
 $title					= 'Lista de Projetos Locais';
 $directory				= __DIR__;
 $domain 				= '.test';
@@ -53,7 +54,7 @@ function checkDirType($dirName) {
             return "vue";
             break;
         default:
-            return "php";
+            return "lara";
             break;
     }
 }
@@ -65,213 +66,119 @@ function checkDirType($dirName) {
         <link href="https://fonts.googleapis.com/css?family=Karla:400" rel="stylesheet" type="text/css">
         <style>
             body {
-                background-image: url("https://user-images.githubusercontent.com/33905714/128099250-f32028cb-7d93-40db-8440-c059fd0def69.jpg");
-                background-size: contain;
+                background: rgb(238,174,202);
+                background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
                 margin: 0;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                /* width: 100%;
+                height: 100vh; */
             }
-            .info {
-                color: whitesmoke;
-            }
-            .card-container {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .card-width {
-                height: 500px;
-                width: 350px;
-                margin: 50px;
-                border-radius: 42px;
-                box-shadow: 2px 2px 22px rgba(0, 0, 0, 0.2);
-                transition: .3s box-shadow, .3s margin-top ease-in-out;
-            }
-            .card-width:hover {
-                box-shadow: 2px 12px 32px rgba(0, 0, 0, 0.5);
-                margin-top: 30px;
-                cursor: pointer;
-            }
-            .btn-base {
-                display: flex;
-                width: 260px;
-                height: 50px;
-                border-radius: 50px;
-                margin: 0 auto;
-                margin-top: -25px;
-                font-size: 30px;
-                justify-content: center;
-                align-items: center;
-                color: white;
-            }
-            .btn-lara {
-                background-color: #f44336;
-            }
-            .btn-php {
-                background-color: #535353;
-            }
-            .btn-git {
-                background-color: #641b16;
-            }
-            .btn-vue {
-                background-color: #009771;
-            }
-            .btn-wp {
-                background-color: #7595ff;
-            }
-            .btn-db {
-                background-color: #fb9b10;
-            }
-            .card-lara {
-                background-color: #f3a49e;
-            }
-            .card-php {
-                background-color: #cecece;
-            }
-            .card-git {
-                background-color: #d88c86;
-            }
-            .card-vue {
-                background-color: #36f4c5;
-            }
-            .card-wp {
-                background-color: #57c1ff;
-            }
-            .card-db {
-                background-color: #fecc85;
-            }
-            .content {
-                padding: 15px 35px;
-                font-size: 16px;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            }
-            a, a:visited {
-                text-decoration: none;
-                color: darkslategray;
-            }
-            .card-config {
-                height: 500px;
-                background-color: #ffffff;
-            }
-            .img-config {
-                width: 350px;
-                height: 300px;
-                border-radius: 42px;
-            }
-            .img-lara {
-                background: url('https://user-images.githubusercontent.com/33905714/128091045-e5cd2ef6-93d5-4a05-b854-b82d76c75a17.png') no-repeat;
-                background-size: 130%;
-                background-position-x: 50%;
-            }
-            .img-php {
-                background: url('https://user-images.githubusercontent.com/33905714/128091058-4ee0c1d5-3bfd-4a28-943b-d91e854952d5.png') no-repeat;
-                background-size: 130%;
-                background-position-x: 50%;
-            }
-            .img-wp {
-                background: url('https://user-images.githubusercontent.com/33905714/128091115-f71f937b-c220-4d33-8f50-a34112837584.png') no-repeat;
-                background-size: 130%;
-                background-position-x: 50%;
-            }
-            .img-git {
-                background: url('https://user-images.githubusercontent.com/33905714/128091027-af4c6e89-3cd6-49e2-b04f-310b4c839940.png') no-repeat;
-                background-size: 130%;
-                background-position-x: 50%;
-            }
-            .img-vue {
-                background: url('https://user-images.githubusercontent.com/33905714/128091095-477347e9-27b9-4151-9621-64099f86f0ff.png') no-repeat;
-                background-size: 130%;
-                background-position-x: 50%;
-            }
-            .img-db {
-                background: url('https://user-images.githubusercontent.com/33905714/128100240-cc431629-fe3f-457a-a56d-198698c1eda5.png') no-repeat;
-                background-size: 130%;
-                background-position-x: 50%;
-            }
-            @media (max-width: 1314px) {
-                .card-container {
-                    flex-direction: row;
-                    justify-content: center;
-                    margin: 0 auto;
-                    gap: 40px
-                }
-                .card-width {
-                    margin: 0 auto;
-                    margin-top: 25px;
-                }
-                .card-width:hover {
-                    box-shadow: 2px 12px 32px rgba(0, 0, 0, 0.5);
-                    cursor: pointer;
-                }
-            }
-            
-            .notification {
-                position: relative;
-                display: inline-block;
-            }
-
-            .notification .badge {
-                position: absolute;
-                top: -15px;
-                right: -20px;
-                padding: 10px 15px;
-                border-radius: 25%;
-                background-color: red;
-                color: white;
-            }
+           
+     
+        
+          
+           
+      
+           
         </style>
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="info"><br />
-                    <?php print($_SERVER['SERVER_SOFTWARE']) ?><br />
-                    PHP version: <?php print phpversion() ?>   <span><a title="phpinfo()" href="/?q=info">info</a></span><br />
-                    Document Root: <?php print ($_SERVER['DOCUMENT_ROOT']); ?><br />
-                    Laragon Docs: <a title="Getting Started" href="https://laragon.org/docs" target="_blank">Getting Started</a><br />
-                    Owner: <a title="Hélder Lima de Jesus" href="https://helder.dev" target="_blank">Hélder</a><br />
-                    <h1>Lista de Projetos:</h1>
-                </div>
-                <div class="card-container">
-                    <a title="phpMyAdmin" href="/phpmyadmin" target="_blank">
-                        <div class="card-db card-width">
-                            <div class="img-db img-config"></div>
-                            <div class="btn-base btn-db">
-                                <p>phpMyAdmin</p>
-                            </div>
-                            <div class="content">
-                                <p><b>Gerenciador de banco de dados.</b></p>
+        <div class="flex flex-col w-full h-full">
+            <div class="p-4">
+                <?php print($_SERVER['SERVER_SOFTWARE']) ?><br />
+                PHP version: <?php print phpversion() ?>   <span ><a title="phpinfo()" href="/?q=info">info</a></span><br />
+                Document Root: <?php print ($_SERVER['DOCUMENT_ROOT']); ?><br />
+                Laragon Docs: <a title="Getting Started" href="https://laragon.org/docs" target="_blank">Getting Started</a><br />
+                Owner: <a title="Hélder Lima de Jesus" href="https://helder.dev" target="_blank">Hélder</a><br />
+                <h1>Lista de Projetos:</h1>
+            </div>    
+            <div class="p-4 flex flex-wrap justify-center gap-8">
+                <a title="phpMyAdmin" style="background-color: #fecc85" class="h-48 w-32 rounded-lg shadow-sm hover:shadow-lg flex flex-col items-center justify-center text-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200" href="/phpmyadmin" target="_blank">
+                    <div class="h-full w-full flex flex-col justify-between items-center relative">
+                        <div class="h-1/2 w-full rounded-b-2xl rounded-t-lg shadow-sm bg-red-400 flex items-center justify-center bg-gradient-to-t from-pink-500 to-yellow-500">
+                            <img src="https://user-images.githubusercontent.com/33905714/164336135-1d6c299c-303e-48ea-a36e-bc546d3be1bd.png" class="h-14 w-14" alt="phpmyadmin">
+                        </div>
+                        <span style="background-color: #fb9b10;" class="p-2 absolute rounded-full top-20 text-center">phpMyAdmin</span>
+                        <div class="h-1/2 w-full flex items-center justify-center font-light">
+                            Gerenciador de banco de dados
+                        </div>
+                    </div>
+                </a>
+                <?php foreach ($scanned_directories as $scanned_directory): ?>
+                <?php if (startsWith($skip_start_with, $scanned_directory) || skipFile($skip_file_name, $scanned_directory)): ?>
+                <?php continue ?>
+                <?php endif; ?>
+                <?php if (is_dir($scanned_directory)): ?>
+                <?php if (in_array($show_project, array('directory', 'both'))): ?>
+                <?php $type = checkDirType($scanned_directory);?>
+                <?php 
+                switch($type) {
+                    case 'lara': 
+                        $img = "https://user-images.githubusercontent.com/33905714/164338165-e558e99b-64ed-4f64-96ec-725c24de4d7b.png";
+                        $cor1 = "#f3a49e";
+                        $cor2 = "#f44336";
+                        $bg = "";
+                        $grad1 = "from-violet-400";
+                        $grad2 = "to-orange-500";
+                    break;
+                    case 'vue':
+                        $img = "https://user-images.githubusercontent.com/33905714/164338162-362c4e68-5121-439b-b312-5329061dbbec.png";
+                        $cor1 = "#36f4c5";
+                        $cor2 = "#009771";
+                        $bg = "";
+                        $grad1 = "from-violet-400";
+                        $grad2 = "to-orange-500";
+                    break;
+                    case 'php':
+                        $img = "https://user-images.githubusercontent.com/33905714/164338160-4053256f-bbc1-4324-b2c7-654aa3d2a1bd.png";
+                        $cor1 = "#cecece";
+                        $cor2 = "#868686";
+                        $bg = "";
+                        $grad1 = "from-rose-400";
+                        $grad2 = "to-slate-500";
+                    break;
+                    case 'wp':
+                        $img = "https://user-images.githubusercontent.com/33905714/164338163-17f3da24-e6bc-40b5-8315-a4fb35927391.png";
+                        $cor1 = "#57c1ff";
+                        $cor2 = "#7595ff";
+                        $bg = "";
+                        $grad1 = "from-violet-400";
+                        $grad2 = "to-orange-500";
+                    break;
+                    case 'git':
+                        $img = "https://user-images.githubusercontent.com/33905714/164341029-393f0ccd-b9a5-42bf-a962-e6defc898322.png";
+                        $cor1 = "#641b16";
+                        $cor2 = "#d88c86";
+                        $bg = "";
+                        $grad1 = "from-violet-400";
+                        $grad2 = "to-orange-500";
+                    break;
+                }
+                ?>
 
-                            </div>
+                <a href="https://<?=$scanned_directory?>.test/" style="background-color: <?= $cor1;?>" class="h-48 w-32 rounded-lg shadow-sm hover:shadow-lg flex flex-col items-center justify-center text-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200 relative">
+                    <?php $stat = stat($scanned_directory); ?>
+                    <div class="h-full w-full flex flex-col justify-between items-center relative">
+                        <div class="h-1/2 w-full rounded-b-2xl rounded-t-lg shadow-sm flex items-center justify-center bg-gradient-to-t <?= $grad1;?> <?= $grad2;?>  ">
+                            <img src="<?=$img;?>" class="h-14 w-14" alt="phpmyadmin">
                         </div>
-                    </a>
-                    <?php foreach ($scanned_directories as $scanned_directory): ?>
-                    <?php if (startsWith($skip_start_with, $scanned_directory) || skipFile($skip_file_name, $scanned_directory)): ?>
-                    <?php continue ?>
-                    <?php endif; ?>
-                    <?php if (is_dir($scanned_directory)): ?>
-                    <?php if (in_array($show_project, array('directory', 'both'))): ?>
-                    <?php $type = checkDirType($scanned_directory);?>
-                    <a href="<?=($type == "lara") ? strtolower($scanned_directory)."/public/" : strtolower($scanned_directory)?>">
-                        <?php $stat = stat($scanned_directory); ?>
-                        <div class="card-<?= $type?> card-width notification">
-                            <?php if(gmdate("d/m/Y", $stat['mtime']) <= date("d/m/Y")){?>
-                            <span class="badge">hot</span>
-                            <?php }?>
-                            <div class="img-<?= $type?> img-config"></div>
-                            <div class="btn-base btn-<?= $type?>">
-                                <p><?=$scanned_directory?></p>
-                            </div>
-                            <div class="content">
-                                <p><b>Ultima modificação</b>: <?=gmdate("d/m/Y", $stat['mtime'])?></p>
-                                <p><b>Data Criação</b>: <?=gmdate("d/m/Y", $stat['ctime'])?></p>
-                            </div>
+                        <span style="background-color: <?= $cor2;?>;" class="p-2 absolute rounded-full top-20 text-center w-5/6"><?= (strlen($scanned_directory) > 12) ? substr($scanned_directory, 0, 8) . "..." : $scanned_directory ?></span>
+                        <?php  $diff = date_diff(date_create(date("Y-m-d")), date_create(date("Y-m-d", $stat['mtime']))) ?>
+                        <?php if ($diff->days < 3){?>
+                            <span class="rounded-full w-10 h-10 p-4 absolute left-28 bg-amber-400 z-40 flex justify-center items-center">hot</span>
+                        <?php }?>
+                        <div class="h-1/2 w-full flex flex-col items-center justify-center font-light text-xs">
+                            <!-- <p>Data Criação: <?=gmdate("d/m/Y", $stat['ctime'])?></p> -->
+                            Ultima modificação: <span class="font-medium"><?=gmdate("d/m/Y", $stat['mtime'])?></span>
                         </div>
-                    </a>
-                    <?php endif; ?>
-                    <?php endif; ?>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+                    </div>
+                </a>
+                <?php endif; ?>
+                <?php endif; ?>
+                <?php endforeach; ?> 
+            </div>    
+            
         </div>
     </body>
 </html>
